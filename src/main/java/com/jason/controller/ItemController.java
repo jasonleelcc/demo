@@ -24,6 +24,11 @@ public class ItemController {
         return repo.findAll();
     }
 
+    @RequestMapping(value = "/checked", method = RequestMethod.GET)
+    public List<Item> findChecked() {
+        return repo.findChecked();
+    }
+
     @RequestMapping(method = RequestMethod.POST)
     public Item addItem(@RequestBody Item item) {
         item.setId(null);
