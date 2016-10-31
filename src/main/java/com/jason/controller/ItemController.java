@@ -26,7 +26,7 @@ public class ItemController {
 
     @RequestMapping(value = "/checked", method = RequestMethod.GET)
     public List<Item> findChecked() {
-        return repo.findChecked();
+        return repo.findChecked();//this
     }
 
     @RequestMapping(method = RequestMethod.POST)
