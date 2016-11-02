@@ -3,6 +3,8 @@ package com.jason.controller;
 import com.jason.model.Item;
 import com.jason.repository.ItemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -18,15 +20,26 @@ import java.util.List;
 public class ItemController {
     @Autowired
     private ItemRepository repo;
+    @Value("${my.name}")
+    private String myName;
 
     @RequestMapping(method = RequestMethod.GET)
     public List<Item> findItems() {
-        return repo.findAll();
+        List<Item> items = repo.findAll();
+        for (Item a: items) {
+              System.out.println(a.getDescription());
+        }
+        return items;
     }
 
     @RequestMapping(value = "/checked", method = RequestMethod.GET)
     public List<Item> findChecked() {
         return repo.findChecked();//this
+    }
+
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String hello() {
+        return "Hello World " + myName;
     }
 
     @RequestMapping(method = RequestMethod.POST)
