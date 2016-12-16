@@ -13,7 +13,8 @@ public class DemoApplication {
 	public static void main(String[] args) {
 
 		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
-		System.out.println("This is branch2");
+		System.out.println("This is branch3");
+		System.out.println("End of the Road");
 //		@Value("${my.name}")
 //		public String myName;
 //		System.out.println(myName);
