@@ -15,6 +15,8 @@ public class DemoApplication {
 		ApplicationContext ctx = SpringApplication.run(DemoApplication.class, args);
 		System.out.println("This is branch3");
 		System.out.println("End of the Road");
+		System.out.println("Boyz II Man");
+
 //		@Value("${my.name}")
 //		public String myName;
 //		System.out.println(myName);
