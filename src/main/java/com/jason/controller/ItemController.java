@@ -39,7 +39,7 @@ public class ItemController {
 
     @RequestMapping(value = "/hello", method = RequestMethod.GET)
     public String hello() {
-        return "Hello World " + myName;
+        return "Hello World qas" + myName;
     }
 
     @RequestMapping(method = RequestMethod.POST)
